@@ -4,7 +4,7 @@ Polymarket copy trading bot is an automated trading system designed to replicate
 
 <div align="center">
   <a href="../../releases/latest">
-    <img width="1200" alt="Polymarket copy trading bot is an automated trading system designed to replicate the trading strategies of successful Polymarket traders in real-time." src="assets/Polymarket.png" />
+    <img width="1200" alt="Polymarket copy trading bot is an automated trading system designed to replicate the trading strategies of successful Polymarket traders in real-time." src="assets/polymarket.png" />
   </a>
 </div>
 
