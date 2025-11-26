@@ -134,7 +134,12 @@ Polymarket API
 - Full trade log  
 
 ---
+## 🖥️ Installation and Launch
 
+1. ✅ **Download the stable build** from the [Releases](../../releases).
+2. 📁 **Extract Files**: Unzip the archive.
+3. 🟢 **Run**: Launch `PolyTrade.exe`
+---
 ## Tech Stack
 
 | Layer     | Technology          |
