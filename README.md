@@ -17,7 +17,23 @@ This bot monitors selected Polymarket wallets in real time and **automatically m
 Perfect for users who want a **simple, fast, and reliable** copy-trading setup.
 
 ---
-
+```
+polymarket-copy-bot/
+│
+├── src/
+│   ├── copytrading.py
+│   ├── watcher.py
+│   ├── interpreter.py
+│   ├── sizing.py
+│   ├── executor.py
+│   ├── risk.py
+│   ├── api.py
+│   ├── config.py
+│   └── main.py
+│
+├── requirements.txt
+```
+---
 ## Core Features
 
 ### 1. Real-Time Wallet Mirroring
