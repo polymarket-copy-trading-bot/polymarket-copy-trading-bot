@@ -109,14 +109,14 @@ Polymarket API
 ```
 
 ---
-
-## 📊 Example Copy Scenario
+## 📊 Example Copy Script
 
 1. A tracked wallet buys **"Biden wins MI"** at 48%.
 2. Bot detects the trade instantly.
 3. Your sizing rule is applied (e.g., $25 fixed).
 4. The bot mirrors the trade within ~150 ms.
 5. When the wallet exits, your position closes automatically.
+6. Optional rule: the bot can automatically close your trade once it reaches **X% profit**, regardless of what the tracked wallet does.
 
 ---
 
