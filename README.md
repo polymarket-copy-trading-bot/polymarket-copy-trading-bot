@@ -164,4 +164,3 @@ The author is not responsible for any financial losses or outcomes.
 ## 🚀
 
 **Copy trades fast. Copy trades directly. No extra logic — just pure mirroring.**
-```
