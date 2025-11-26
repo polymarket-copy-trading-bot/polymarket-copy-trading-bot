@@ -6,7 +6,7 @@ A straightforward, high-speed copy trading bot for **Polymarket**.
 
 ---
 
-## 📘 Overview
+## Overview
 
 This bot monitors selected Polymarket wallets in real time and **automatically mirrors their trades**.  
 
@@ -14,9 +14,9 @@ Perfect for users who want a **simple, fast, and reliable** copy-trading setup.
 
 ---
 
-## 🌟 Core Features
+## Core Features
 
-### 🟢 1. Real-Time Wallet Mirroring
+### 1. Real-Time Wallet Mirroring
 
 The bot continuously watches target wallets:
 
@@ -27,7 +27,7 @@ The bot continuously watches target wallets:
 
 ---
 
-### 🟢 2. Position Scaling
+### 2. Position Scaling
 
 Choose how the bot sizes your trades:
 
@@ -52,7 +52,7 @@ Includes:
 
 ---
 
-### 🟢 3. Multi-Wallet Copying
+### 3. Multi-Wallet Copying
 
 Copy multiple wallets at once.  
 You can set:
@@ -65,7 +65,7 @@ The bot will open/close positions in sync with each tracked wallet.
 
 ---
 
-### 🟢 4. Fail-Safe Execution Layer
+### 4. Fail-Safe Execution Layer
 
 Built for reliability:
 
@@ -109,7 +109,7 @@ Polymarket API
 ```
 
 ---
-## 📊 Example Copy Script
+## Example Copy Script
 
 1. A tracked wallet buys **"Biden wins MI"** at 48%.
 2. Bot detects the trade instantly.
@@ -120,7 +120,7 @@ Polymarket API
 
 ---
 
-## 🔒 Risk Controls
+## Risk Controls
 
 - Max stake per event  
 - Daily/weekly exposure limits  
@@ -131,7 +131,7 @@ Polymarket API
 
 ---
 
-## 🧩 Tech Stack
+## Tech Stack
 
 | Layer     | Technology          |
 |-----------|----------------------|
@@ -144,13 +144,13 @@ Polymarket API
 
 ---
 
-## 📄 License
+## License
 
 MIT License.
 
 ---
 
-## ⚖️ Disclaimer
+## Disclaimer
 
 This software is for research and educational purposes only.  
 The author is not responsible for any financial losses or outcomes.
