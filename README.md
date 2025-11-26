@@ -1,212 +1,163 @@
-# 🤖 Polymarket AI Copy Trading & Prediction Bot
+# 🔁 Polymarket Copy Trading Bot
 
-**High-precision, AI-augmented copy trading engine for Polymarket ---
-built to replicate top traders with speed, safety, and autonomy.**
+A straightforward, high-speed copy trading bot for **Polymarket**. 
 
-![Polymarket AI Copy Trading](assets/AGENT.png)
+![Polymarket Copy Trading](assets/AGENT.png)
 
-------------------------------------------------------------------------
+---
 
-## 🧠 Overview
+## 📘 Overview
 
-At its core, this system is **a next-generation copy trading engine**,
-not a generic trading bot.
-It tracks selected wallets in real time, analyzes each position,
-validates the trade with AI, and mirrors it with optimal sizing.
+This bot monitors selected Polymarket wallets in real time and **automatically mirrors their trades**.  
 
-Unlike traditional copiers that blindly mirror every trade, this system
-**evaluates the reasoning behind the trader's action**, filters noise,
-and only executes trades that pass risk and probability checks.
+Perfect for users who want a **simple, fast, and reliable** copy-trading setup.
 
-------------------------------------------------------------------------
+---
 
-## 🌟 Core Copy-Trading Features
+## 🌟 Core Features
 
 ### 🟢 1. Real-Time Wallet Mirroring
 
-Live monitoring of selected Polymarket wallets:
+The bot continuously watches target wallets:
 
--   Detects trades instantly
--   Identifies event, direction, and stake
--   Executes mirrored trades within milliseconds
--   Built on a fully asynchronous event-driven pipeline
+- Detects trades instantly  
+- Identifies event, direction, and stake  
+- Executes mirrored trades within milliseconds  
+- Uses asynchronous processing for maximum speed  
 
-------------------------------------------------------------------------
+---
 
-### 🟢 2. Intelligent Position Scaling
+### 🟢 2. Position Scaling
 
-Your position automatically adjusts according to strategy:
+Choose how the bot sizes your trades:
 
-**Scale Mode (proportional):**
+**Proportional Mode:**
+```
 
-    YourStake = (YourBank / TraderBank) × TraderStake
+YourStake = (YourBank / TraderBank) × TraderStake
 
-**Allocate Mode (fixed allocation):**
+```
 
-    Always bet $X regardless of trader’s bet size
+**Fixed Allocation Mode:**
+```
 
-Includes minimum/maximum trade thresholds and liquidity filters.
+Always bet $X per trade
 
-------------------------------------------------------------------------
+```
 
-### 🟢 3. AI-Assisted Copy Validation
+Includes:
+- Min/max trade size  
+- Liquidity checks  
+- Event-level exposure limits  
 
-Before mirroring a trade, the system validates it using multiple AI
-models:
+---
 
--   ChatGPT / DeepSeek → probability estimation
--   Claude / Gemini → context & fundamentals
--   Grok → sentiment & news patterns
--   Event EV calculation
--   Kelly-based sizing recommendation
+### 🟢 3. Multi-Wallet Copying
 
-If a trade is emotional, random, or low-quality --- **the bot will NOT
-copy it**.
+Copy multiple wallets at once.  
+You can set:
 
-------------------------------------------------------------------------
+- Equal weights  
+- Custom weights  
+- Per-wallet limits  
 
-### 🟢 4. Multi-Wallet Copy Portfolio
+The bot will open/close positions in sync with each tracked wallet.
 
-You can copy:
+---
 
--   a single wallet
--   multiple wallets
--   a weighted portfolio of wallets
+### 🟢 4. Fail-Safe Execution Layer
 
-Weights are based on:
+Built for reliability:
 
--   historical accuracy
--   volatility
--   risk profile
+- No duplicate trades  
+- Automatic retries  
+- Handles Polymarket API interruptions  
+- Auto-exit when the original wallet exits the position  
 
-This builds a **diversified, risk-weighted copy-trading portfolio**, not
-random mirrored trades.
+---
 
-------------------------------------------------------------------------
+## ⚙️ Architecture (Simplified)
 
-### 🟢 5. Fail-Safe Execution Layer
+```
 
-Engineered for reliability:
++------------------------------+
+|      Wallet Watcher          |
+|  Real-time wallet tracking   |
++--------------+---------------+
+|
+v
++------------------------------+
+|     Trade Interpreter        |
+| Detect event, direction, $   |
++--------------+---------------+
+|
+v
++------------------------------+
+|     Position Sizing Engine   |
+| Scale or fixed allocation    |
++--------------+---------------+
+|
+v
++------------------------------+
+|       Trade Executor         |
+| Market/limit execution       |
++--------------+---------------+
+|
+v
+Polymarket API
 
--   Deduplication (no double positions)
--   Automatic retries with exponential backoff
--   Recovery from Polymarket API errors
--   Automatic exit when the original trader exits
+```
 
-------------------------------------------------------------------------
-
-## ⚙️ Architecture (Copy-Trading Focus)
-
-    +--------------------------------------------------------------+
-    |                       Wallet Watcher                         |
-    |         Live monitoring of trader wallet activity            |
-    +----------------------------+---------------------------------+
-                                 |
-                                 v
-    +--------------------------------------------------------------+
-    |           Trade Interpreter & Normalizer                     |
-    |   • Detects direction, event, and stake                      |
-    |   • Filters noise & artifacts                                |
-    +----------------------------+---------------------------------+
-                                 |
-                                 v
-    +--------------------------------------------------------------+
-    |             AI-Assisted Copy Decision Layer                  |
-    |   • LLM validation                                           |
-    |   • EV/Kelly scoring                                         |
-    |   • Approve/Reject                                           |
-    +----------------------------+---------------------------------+
-                                 |
-                                 v
-    +--------------------------------------------------------------+
-    |                Position Scaling Engine                       |
-    |   • Scale / Allocate                                         |
-    |   • Risk filters                                             |
-    +----------------------------+---------------------------------+
-                                 |
-                                 v
-    +--------------------------------------------------------------+
-    |                     Trade Executor                           |
-    |   • Market/limit execution                                   |
-    |   • Retry & fail-safe                                        |
-    +----------------------------+---------------------------------+
-                                 |
-                                 v
-                             Polymarket API
-
-------------------------------------------------------------------------
+---
 
 ## 📊 Example Copy Scenario
 
-1.  A top wallet buys **"Trump wins PA"** at 42%.
-2.  The bot detects the trade instantly.
-3.  AI validates the idea (probability \~44--46%).
-4.  EV is positive → trade approved.
-5.  Position is scaled using Kelly: **2.3% of your capital**.
-6.  Trade executes in \<150 ms.
-7.  When the trader exits, the bot exits too.
+1. A tracked wallet buys **"Biden wins MI"** at 48%.
+2. Bot detects the trade instantly.
+3. Your sizing rule is applied (e.g., $25 fixed).
+4. The bot mirrors the trade within ~150 ms.
+5. When the wallet exits, your position closes automatically.
 
-------------------------------------------------------------------------
+---
 
-## 📈 Why AI Matters in Copy Trading
+## 🔒 Risk Controls
 
-Traditional copy trading has a critical flaw:
-**it copies good trades and bad trades equally.**
+- Max stake per event  
+- Daily/weekly exposure limits  
+- Liquidity filters  
+- Per-wallet exposure caps  
+- Automatic recovery  
+- Full trade log  
 
-This system copies only trades that pass:
-
--   EV screening
--   likelihood estimation
--   fundamental checks
--   volatility and liquidity thresholds
--   trader consistency checks
-
-If the trader makes an emotional or inconsistent trade ---\
-**the bot rejects it**, protecting your capital.
-
-------------------------------------------------------------------------
+---
 
 ## 🧩 Tech Stack
-```
-  Layer        Technology
-  ------------ ---------------------------------------------
-  Language     Python 3.13+
-  Runtime      asyncio, uvloop
-  Data         Polymarket API + WebSockets
-  AI Models    ChatGPT · DeepSeek · Claude · Gemini · Grok
-  DB           PostgreSQL (optional)
-  Queue        Redis / Async Queue
-  Interfaces   CLI · FastAPI · Telegram Bot
-```
-------------------------------------------------------------------------
 
-## 🔒 Copy-Trading Risk Controls
+| Layer     | Technology          |
+|-----------|----------------------|
+| Language  | Python 3.13+         |
+| Runtime   | asyncio, uvloop      |
+| Data      | Polymarket API + WS  |
+| DB        | PostgreSQL (optional)|
+| Queue     | Redis / Async Queue  |
+| Interface | CLI · FastAPI · Telegram Bot |
 
--   Max stake per event
--   Max daily/weekly exposure
--   Cooldown after losing streak
--   Minimum liquidity filter
--   Maximum exposure per trader
--   Automatic error recovery
--   Full trade journal logging
-
-------------------------------------------------------------------------
+---
 
 ## 📄 License
 
 MIT License.
 
-------------------------------------------------------------------------
+---
 
 ## ⚖️ Disclaimer
 
-This software is for research and educational use only.\
-The author is not responsible for any financial losses or trading
-outcomes.
+This software is for research and educational purposes only.  
+The author is not responsible for any financial losses or outcomes.
 
-------------------------------------------------------------------------
+---
 
 ## 🚀
 
-**Copy smarter, not harder.\
-Let AI filter the noise --- and follow only high-quality signals.**
+**Copy trades fast. Copy trades directly. No extra logic — just pure mirroring.**
+```
