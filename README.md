@@ -174,14 +174,4 @@ Polymarket API
 MIT License.
 
 ---
-
-## Disclaimer
-
-This software is for research and educational purposes only.  
-The author is not responsible for any financial losses or outcomes.
-
----
-
-## 🚀
-
-**Copy trades fast. Copy trades directly. No extra logic — just pure mirroring.**
+`Copy trades fast. Copy trades directly. No extra logic — just pure mirroring`
