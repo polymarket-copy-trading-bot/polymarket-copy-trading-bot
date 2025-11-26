@@ -1,8 +1,12 @@
 # 🔁 Polymarket Copy Trading Bot
 
-A straightforward, high-speed copy trading bot for **Polymarket**. 
+Polymarket copy trading bot is an automated trading system designed to replicate the trading strategies of successful Polymarket traders in real-time. A straightforward, high-speed copy trading bot for **Polymarket**.
 
-![Polymarket Copy Trading](assets/AGENT.png)
+<div align="center">
+  <a href="../../releases/latest">
+    <img width="1200" alt="Polymarket copy trading bot is an automated trading system designed to replicate the trading strategies of successful Polymarket traders in real-time." src="assets/Polymarket.png" />
+  </a>
+</div>
 
 ---
 
