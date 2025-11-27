@@ -36,14 +36,15 @@ polymarket-copy-bot/
 ---
 ## Core Features
 
-### 1. Real-Time Wallet Mirroring
+- **Auto Copy Trading** — automatically replicates trades from a target Polymarket trader.  
+- **Risk Controls** — adjustable fetch intervals, retry limits, and timestamp filtering.  
+- **MongoDB Logging** — logs trades and system events for debugging and analytics.  
+- **Simple Configuration** — all settings managed through a `.env` file.
 
-The bot continuously watches target wallets:
+### Real-Time Wallet Mirroring
 
-- Detects trades instantly  
-- Identifies event, direction, and stake  
-- Executes mirrored trades within milliseconds  
-- Uses asynchronous processing for maximum speed  
+> The bot continuously monitors target wallets: detects trades instantly, identifies the event, direction, and stake, executes mirrored trades within <150ms, and uses asynchronous processing for maximum speed.
+
 
 ---
 
